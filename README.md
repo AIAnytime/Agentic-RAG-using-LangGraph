@@ -189,7 +189,7 @@ llm = ChatOpenAI(
 )
 ```
 
-## 💻 Implementation Details
+## Implementation Details
 
 ### Node 1: Rephrase Query
 
@@ -283,7 +283,7 @@ workflow.set_entry_point("rephrase_query")
 graph = workflow.compile(checkpointer=checkpointer)
 ```
 
-## ▶️ Running the System
+## Running the System
 
 ### Basic Usage
 

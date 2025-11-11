@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="803pt" height="889pt" viewBox="0.00 0.00 803.00 889.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 884.7)">
+<title>LangGraphRAG</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-884.7 799,-884.7 799,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="397.5" y="-862.3" font-family="Arial Bold" font-size="16.00">LangGraph-based Conversational RAG System</text>
+<g id="clust1" class="cluster">
+<title>cluster_components</title>
+<polygon fill="none" stroke="blue" stroke-dasharray="5,2" points="8,-8 8,-131.5 454,-131.5 454,-8 8,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="231" y="-113.1" font-family="Arial Bold" font-size="16.00">System Components</text>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="lightgreen" stroke="black" cx="117" cy="-835.5" rx="72.76" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="117" y="-831.3" font-family="Arial" font-size="14.00">User Question</text>
+</g>
+<!-- rephrase -->
+<g id="node2" class="node">
+<title>rephrase</title>
+<path fill="lightyellow" stroke="black" d="M181.49,-780.5C181.49,-780.5 52.51,-780.5 52.51,-780.5 46.51,-780.5 40.51,-774.5 40.51,-768.5 40.51,-768.5 40.51,-734.1 40.51,-734.1 40.51,-728.1 46.51,-722.1 52.51,-722.1 52.51,-722.1 181.49,-722.1 181.49,-722.1 187.49,-722.1 193.49,-728.1 193.49,-734.1 193.49,-734.1 193.49,-768.5 193.49,-768.5 193.49,-774.5 187.49,-780.5 181.49,-780.5"/>
+<text xml:space="preserve" text-anchor="middle" x="117" y="-763.9" font-family="Arial" font-size="14.00">Rephrase Query</text>
+<text xml:space="preserve" text-anchor="middle" x="117" y="-747.1" font-family="Arial" font-size="14.00">(Convert follow-ups to</text>
+<text xml:space="preserve" text-anchor="middle" x="117" y="-730.3" font-family="Arial" font-size="14.00">standalone questions)</text>
+</g>
+<!-- start&#45;&gt;rephrase -->
+<g id="edge1" class="edge">
+<title>start-&gt;rephrase</title>
+<path fill="none" stroke="black" d="M117,-817.07C117,-809.73 117,-800.86 117,-792.07"/>
+<polygon fill="black" stroke="black" points="120.5,-792.22 117,-782.22 113.5,-792.22 120.5,-792.22"/>
+</g>
+<!-- classify -->
+<g id="node3" class="node">
+<title>classify</title>
+<path fill="lightyellow" stroke="black" d="M309.15,-685.1C309.15,-685.1 156.85,-685.1 156.85,-685.1 150.85,-685.1 144.85,-679.1 144.85,-673.1 144.85,-673.1 144.85,-655.5 144.85,-655.5 144.85,-649.5 150.85,-643.5 156.85,-643.5 156.85,-643.5 309.15,-643.5 309.15,-643.5 315.15,-643.5 321.15,-649.5 321.15,-655.5 321.15,-655.5 321.15,-673.1 321.15,-673.1 321.15,-679.1 315.15,-685.1 309.15,-685.1"/>
+<text xml:space="preserve" text-anchor="middle" x="233" y="-668.5" font-family="Arial" font-size="14.00">Classify Topic</text>
+<text xml:space="preserve" text-anchor="middle" x="233" y="-651.7" font-family="Arial" font-size="14.00">(Is question answerable?)</text>
+</g>
+<!-- rephrase&#45;&gt;classify -->
+<g id="edge2" class="edge">
+<title>rephrase-&gt;classify</title>
+<path fill="none" stroke="black" d="M155.95,-721.76C168.98,-712.21 183.45,-701.61 196.3,-692.19"/>
+<polygon fill="black" stroke="black" points="198.11,-695.2 204.11,-686.47 193.97,-689.56 198.11,-695.2"/>
+</g>
+<!-- llm -->
+<g id="node13" class="node">
+<title>llm</title>
+<path fill="plum" stroke="black" d="M294.33,-79.55C294.33,-82.42 270.88,-84.75 242,-84.75 213.12,-84.75 189.67,-82.42 189.67,-79.55 189.67,-79.55 189.67,-32.75 189.67,-32.75 189.67,-29.88 213.12,-27.55 242,-27.55 270.88,-27.55 294.33,-29.88 294.33,-32.75 294.33,-32.75 294.33,-79.55 294.33,-79.55"/>
+<path fill="none" stroke="black" d="M294.33,-79.55C294.33,-76.68 270.88,-74.35 242,-74.35 213.12,-74.35 189.67,-76.68 189.67,-79.55"/>
+<text xml:space="preserve" text-anchor="middle" x="242" y="-60.35" font-family="Arial" font-size="14.00">LLM</text>
+<text xml:space="preserve" text-anchor="middle" x="242" y="-43.55" font-family="Arial" font-size="14.00">(GPT-4o-mini)</text>
+</g>
+<!-- rephrase&#45;&gt;llm -->
+<g id="edge15" class="edge">
+<title>rephrase-&gt;llm</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M117,-721.97C117,-705.44 117,-684.19 117,-665.3 117,-665.3 117,-665.3 117,-178.3 117,-164.47 129.92,-166.78 141,-158.5 158.18,-145.66 165.14,-145.94 181,-131.5 193.32,-120.28 205.3,-106.51 215.34,-93.89"/>
+<polygon fill="purple" stroke="purple" points="217.98,-96.19 221.35,-86.14 212.45,-91.89 217.98,-96.19"/>
+<text xml:space="preserve" text-anchor="middle" x="127.56" y="-453.9" font-family="Arial" font-size="10.00">uses</text>
+</g>
+<!-- memory -->
+<g id="node15" class="node">
+<title>memory</title>
+<path fill="plum" stroke="black" d="M171.63,-79.55C171.63,-82.42 136.84,-84.75 94,-84.75 51.16,-84.75 16.37,-82.42 16.37,-79.55 16.37,-79.55 16.37,-32.75 16.37,-32.75 16.37,-29.88 51.16,-27.55 94,-27.55 136.84,-27.55 171.63,-29.88 171.63,-32.75 171.63,-32.75 171.63,-79.55 171.63,-79.55"/>
+<path fill="none" stroke="black" d="M171.63,-79.55C171.63,-76.68 136.84,-74.35 94,-74.35 51.16,-74.35 16.37,-76.68 16.37,-79.55"/>
+<text xml:space="preserve" text-anchor="middle" x="94" y="-60.35" font-family="Arial" font-size="14.00">Memory</text>
+<text xml:space="preserve" text-anchor="middle" x="94" y="-43.55" font-family="Arial" font-size="14.00">(Conversation History)</text>
+</g>
+<!-- rephrase&#45;&gt;memory -->
+<g id="edge21" class="edge">
+<title>rephrase-&gt;memory</title>
+<path fill="none" stroke="green" stroke-dasharray="5,2" d="M72.21,-721.81C55.27,-707.34 40,-688 40,-665.3 40,-665.3 40,-665.3 40,-178.3 40,-148.41 53.88,-117.69 67.57,-94.66"/>
+<polygon fill="green" stroke="green" points="70.48,-96.6 72.79,-86.26 64.54,-92.9 70.48,-96.6"/>
+<text xml:space="preserve" text-anchor="middle" x="66.95" y="-453.9" font-family="Arial" font-size="10.00">reads/writes</text>
+</g>
+<!-- topic_router -->
+<g id="node10" class="node">
+<title>topic_router</title>
+<path fill="gold" stroke="black" d="M391.33,-603.69C391.33,-603.69 339.85,-591.31 339.85,-591.31 334.02,-589.9 334.02,-587.1 339.85,-585.69 339.85,-585.69 391.33,-573.31 391.33,-573.31 397.17,-571.9 408.83,-571.9 414.67,-573.31 414.67,-573.31 466.15,-585.69 466.15,-585.69 471.98,-587.1 471.98,-589.9 466.15,-591.31 466.15,-591.31 414.67,-603.69 414.67,-603.69 408.83,-605.1 397.17,-605.1 391.33,-603.69"/>
+<text xml:space="preserve" text-anchor="middle" x="403" y="-584.3" font-family="Arial" font-size="14.00">On-topic?</text>
+</g>
+<!-- classify&#45;&gt;topic_router -->
+<g id="edge3" class="edge">
+<title>classify-&gt;topic_router</title>
+<path fill="none" stroke="black" d="M279.45,-643.13C306.98,-631.18 341.35,-616.26 366.84,-605.2"/>
+<polygon fill="black" stroke="black" points="368.01,-608.5 375.79,-601.31 365.23,-602.08 368.01,-608.5"/>
+</g>
+<!-- classify&#45;&gt;llm -->
+<g id="edge16" class="edge">
+<title>classify-&gt;llm</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M192.17,-643.11C173.3,-630.65 155,-612.62 155,-589.5 155,-589.5 155,-589.5 155,-178.3 155,-168.21 187.24,-125.51 212.47,-93.64"/>
+<polygon fill="purple" stroke="purple" points="214.94,-96.16 218.43,-86.16 209.46,-91.8 214.94,-96.16"/>
+</g>
+<!-- fetch -->
+<g id="node4" class="node">
+<title>fetch</title>
+<path fill="lightcyan" stroke="black" d="M484.19,-522.5C484.19,-522.5 321.81,-522.5 321.81,-522.5 315.81,-522.5 309.81,-516.5 309.81,-510.5 309.81,-510.5 309.81,-492.9 309.81,-492.9 309.81,-486.9 315.81,-480.9 321.81,-480.9 321.81,-480.9 484.19,-480.9 484.19,-480.9 490.19,-480.9 496.19,-486.9 496.19,-492.9 496.19,-492.9 496.19,-510.5 496.19,-510.5 496.19,-516.5 490.19,-522.5 484.19,-522.5"/>
+<text xml:space="preserve" text-anchor="middle" x="403" y="-505.9" font-family="Arial" font-size="14.00">Fetch Documents</text>
+<text xml:space="preserve" text-anchor="middle" x="403" y="-489.1" font-family="Arial" font-size="14.00">(Retrieve from vector store)</text>
+</g>
+<!-- evaluate -->
+<g id="node5" class="node">
+<title>evaluate</title>
+<path fill="lightcyan" stroke="black" d="M463.59,-432.9C463.59,-432.9 342.41,-432.9 342.41,-432.9 336.41,-432.9 330.41,-426.9 330.41,-420.9 330.41,-420.9 330.41,-403.3 330.41,-403.3 330.41,-397.3 336.41,-391.3 342.41,-391.3 342.41,-391.3 463.59,-391.3 463.59,-391.3 469.59,-391.3 475.59,-397.3 475.59,-403.3 475.59,-403.3 475.59,-420.9 475.59,-420.9 475.59,-426.9 469.59,-432.9 463.59,-432.9"/>
+<text xml:space="preserve" text-anchor="middle" x="403" y="-416.3" font-family="Arial" font-size="14.00">Evaluate Documents</text>
+<text xml:space="preserve" text-anchor="middle" x="403" y="-399.5" font-family="Arial" font-size="14.00">(Grade relevance)</text>
+</g>
+<!-- fetch&#45;&gt;evaluate -->
+<g id="edge6" class="edge">
+<title>fetch-&gt;evaluate</title>
+<path fill="none" stroke="black" d="M403,-480.82C403,-470.15 403,-456.73 403,-444.67"/>
+<polygon fill="black" stroke="black" points="406.5,-444.72 403,-434.72 399.5,-444.72 406.5,-444.72"/>
+</g>
+<!-- vectordb -->
+<g id="node14" class="node">
+<title>vectordb</title>
+<path fill="plum" stroke="black" d="M445.94,-89C445.94,-93.03 415.94,-96.3 379,-96.3 342.06,-96.3 312.06,-93.03 312.06,-89 312.06,-89 312.06,-23.3 312.06,-23.3 312.06,-19.27 342.06,-16 379,-16 415.94,-16 445.94,-19.27 445.94,-23.3 445.94,-23.3 445.94,-89 445.94,-89"/>
+<path fill="none" stroke="black" d="M445.94,-89C445.94,-84.97 415.94,-81.7 379,-81.7 342.06,-81.7 312.06,-84.97 312.06,-89"/>
+<text xml:space="preserve" text-anchor="middle" x="379" y="-68.75" font-family="Arial" font-size="14.00">Vector Store</text>
+<text xml:space="preserve" text-anchor="middle" x="379" y="-51.95" font-family="Arial" font-size="14.00">(Chroma + OpenAI</text>
+<text xml:space="preserve" text-anchor="middle" x="379" y="-35.15" font-family="Arial" font-size="14.00">Embeddings)</text>
+</g>
+<!-- fetch&#45;&gt;vectordb -->
+<g id="edge17" class="edge">
+<title>fetch-&gt;vectordb</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M496.52,-494.17C594.4,-484.69 734,-462.51 734,-413.1 734,-413.1 734,-413.1 734,-178.3 734,-120.26 561.88,-84.31 457.34,-67.82"/>
+<polygon fill="purple" stroke="purple" points="458.1,-64.4 447.69,-66.33 457.03,-71.32 458.1,-64.4"/>
+<text xml:space="preserve" text-anchor="middle" x="750.4" y="-298.7" font-family="Arial" font-size="10.00">queries</text>
+</g>
+<!-- decision_router -->
+<g id="node11" class="node">
+<title>decision_router</title>
+<path fill="gold" stroke="black" d="M481.53,-339.79C481.53,-339.79 368.63,-305.21 368.63,-305.21 362.9,-303.46 362.9,-299.94 368.63,-298.19 368.63,-298.19 481.53,-263.61 481.53,-263.61 487.26,-261.86 498.74,-261.86 504.47,-263.61 504.47,-263.61 617.37,-298.19 617.37,-298.19 623.1,-299.94 623.1,-303.46 617.37,-305.21 617.37,-305.21 504.47,-339.79 504.47,-339.79 498.74,-341.54 487.26,-341.54 481.53,-339.79"/>
+<text xml:space="preserve" text-anchor="middle" x="493" y="-305.9" font-family="Arial" font-size="14.00">Has relevant docs?</text>
+<text xml:space="preserve" text-anchor="middle" x="493" y="-289.1" font-family="Arial" font-size="14.00">OR max attempts?</text>
+</g>
+<!-- evaluate&#45;&gt;decision_router -->
+<g id="edge7" class="edge">
+<title>evaluate-&gt;decision_router</title>
+<path fill="none" stroke="black" d="M419.72,-390.96C430.7,-377.74 445.46,-359.96 458.85,-343.83"/>
+<polygon fill="black" stroke="black" points="461.46,-346.17 465.15,-336.24 456.07,-341.7 461.46,-346.17"/>
+</g>
+<!-- evaluate&#45;&gt;llm -->
+<g id="edge18" class="edge">
+<title>evaluate-&gt;llm</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M382.27,-390.94C370.48,-378.31 356.43,-361.11 348,-343.3 312.12,-267.51 342.41,-235.83 310,-158.5 300.44,-135.7 285.48,-112.63 272.01,-94.28"/>
+<polygon fill="purple" stroke="purple" points="274.86,-92.24 266.06,-86.34 269.26,-96.44 274.86,-92.24"/>
+</g>
+<!-- tweak -->
+<g id="node6" class="node">
+<title>tweak</title>
+<path fill="orange" stroke="black" d="M288.58,-200.1C288.58,-200.1 195.42,-200.1 195.42,-200.1 189.42,-200.1 183.42,-194.1 183.42,-188.1 183.42,-188.1 183.42,-170.5 183.42,-170.5 183.42,-164.5 189.42,-158.5 195.42,-158.5 195.42,-158.5 288.58,-158.5 288.58,-158.5 294.58,-158.5 300.58,-164.5 300.58,-170.5 300.58,-170.5 300.58,-188.1 300.58,-188.1 300.58,-194.1 294.58,-200.1 288.58,-200.1"/>
+<text xml:space="preserve" text-anchor="middle" x="242" y="-183.5" font-family="Arial" font-size="14.00">Tweak Question</text>
+<text xml:space="preserve" text-anchor="middle" x="242" y="-166.7" font-family="Arial" font-size="14.00">(Refine query)</text>
+</g>
+<!-- tweak&#45;&gt;fetch -->
+<g id="edge11" class="edge">
+<title>tweak-&gt;fetch</title>
+<path fill="none" stroke="black" d="M241.95,-200.42C242.57,-236.59 247.14,-314.35 273.32,-373.3 292.06,-415.52 331.76,-451.11 362.33,-473.84"/>
+<polygon fill="black" stroke="black" points="360.11,-476.56 370.26,-479.59 364.22,-470.89 360.11,-476.56"/>
+<text xml:space="preserve" text-anchor="middle" x="294.16" y="-364.3" font-family="Arial" font-size="10.00">Try again</text>
+</g>
+<!-- tweak&#45;&gt;llm -->
+<g id="edge19" class="edge">
+<title>tweak-&gt;llm</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M242,-158.02C242,-141.28 242,-117.01 242,-96.48"/>
+<polygon fill="purple" stroke="purple" points="245.5,-96.73 242,-86.73 238.5,-96.73 245.5,-96.73"/>
+</g>
+<!-- respond -->
+<g id="node7" class="node">
+<title>respond</title>
+<path fill="lightgreen" stroke="black" d="M540.87,-200.1C540.87,-200.1 369.13,-200.1 369.13,-200.1 363.13,-200.1 357.13,-194.1 357.13,-188.1 357.13,-188.1 357.13,-170.5 357.13,-170.5 357.13,-164.5 363.13,-158.5 369.13,-158.5 369.13,-158.5 540.87,-158.5 540.87,-158.5 546.87,-158.5 552.87,-164.5 552.87,-170.5 552.87,-170.5 552.87,-188.1 552.87,-188.1 552.87,-194.1 546.87,-200.1 540.87,-200.1"/>
+<text xml:space="preserve" text-anchor="middle" x="455" y="-183.5" font-family="Arial" font-size="14.00">Create Response</text>
+<text xml:space="preserve" text-anchor="middle" x="455" y="-166.7" font-family="Arial" font-size="14.00">(Generate answer with RAG)</text>
+</g>
+<!-- end -->
+<g id="node12" class="node">
+<title>end</title>
+<ellipse fill="gray" stroke="black" cx="759" cy="-56.15" rx="28.22" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="759" y="-51.95" font-family="Arial" font-size="14.00">End</text>
+</g>
+<!-- respond&#45;&gt;end -->
+<g id="edge12" class="edge">
+<title>respond-&gt;end</title>
+<path fill="none" stroke="black" d="M505.88,-158.02C568.06,-133.24 671.54,-92 724.89,-70.75"/>
+<polygon fill="black" stroke="black" points="726.08,-74.04 734.07,-67.09 723.48,-67.54 726.08,-74.04"/>
+</g>
+<!-- respond&#45;&gt;llm -->
+<g id="edge20" class="edge">
+<title>respond-&gt;llm</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M401.35,-158.05C383.01,-151.58 362.26,-144.74 343,-139.5 325.51,-134.74 318.54,-140.83 303,-131.5 287.76,-122.35 274.65,-107.96 264.53,-94.27"/>
+<polygon fill="purple" stroke="purple" points="267.49,-92.39 258.88,-86.21 261.76,-96.4 267.49,-92.39"/>
+</g>
+<!-- fallback -->
+<g id="node8" class="node">
+<title>fallback</title>
+<path fill="salmon" stroke="black" d="M693.53,-200.1C693.53,-200.1 582.47,-200.1 582.47,-200.1 576.47,-200.1 570.47,-194.1 570.47,-188.1 570.47,-188.1 570.47,-170.5 570.47,-170.5 570.47,-164.5 576.47,-158.5 582.47,-158.5 582.47,-158.5 693.53,-158.5 693.53,-158.5 699.53,-158.5 705.53,-164.5 705.53,-170.5 705.53,-170.5 705.53,-188.1 705.53,-188.1 705.53,-194.1 699.53,-200.1 693.53,-200.1"/>
+<text xml:space="preserve" text-anchor="middle" x="638" y="-183.5" font-family="Arial" font-size="14.00">Fallback Response</text>
+<text xml:space="preserve" text-anchor="middle" x="638" y="-166.7" font-family="Arial" font-size="14.00">(No info found)</text>
+</g>
+<!-- fallback&#45;&gt;end -->
+<g id="edge13" class="edge">
+<title>fallback-&gt;end</title>
+<path fill="none" stroke="black" d="M658.25,-158.02C679.85,-136.4 713.96,-102.24 736.41,-79.76"/>
+<polygon fill="black" stroke="black" points="738.74,-82.39 743.33,-72.84 733.78,-77.45 738.74,-82.39"/>
+</g>
+<!-- reject -->
+<g id="node9" class="node">
+<title>reject</title>
+<path fill="salmon" stroke="black" d="M767.57,-522.5C767.57,-522.5 674.43,-522.5 674.43,-522.5 668.43,-522.5 662.43,-516.5 662.43,-510.5 662.43,-510.5 662.43,-492.9 662.43,-492.9 662.43,-486.9 668.43,-480.9 674.43,-480.9 674.43,-480.9 767.57,-480.9 767.57,-480.9 773.57,-480.9 779.57,-486.9 779.57,-492.9 779.57,-492.9 779.57,-510.5 779.57,-510.5 779.57,-516.5 773.57,-522.5 767.57,-522.5"/>
+<text xml:space="preserve" text-anchor="middle" x="721" y="-505.9" font-family="Arial" font-size="14.00">Reject Off-Topic</text>
+<text xml:space="preserve" text-anchor="middle" x="721" y="-489.1" font-family="Arial" font-size="14.00">(Out of scope)</text>
+</g>
+<!-- reject&#45;&gt;end -->
+<g id="edge14" class="edge">
+<title>reject-&gt;end</title>
+<path fill="none" stroke="black" d="M752.38,-480.54C772.55,-464.89 795,-441.17 795,-413.1 795,-413.1 795,-413.1 795,-178.3 795,-144.77 782.17,-108.11 771.83,-83.99"/>
+<polygon fill="black" stroke="black" points="775.06,-82.63 767.79,-74.93 768.67,-85.49 775.06,-82.63"/>
+</g>
+<!-- topic_router&#45;&gt;fetch -->
+<g id="edge4" class="edge">
+<title>topic_router-&gt;fetch</title>
+<path fill="none" stroke="black" d="M403,-570.34C403,-559.92 403,-546.31 403,-534.03"/>
+<polygon fill="black" stroke="black" points="406.5,-534.33 403,-524.33 399.5,-534.33 406.5,-534.33"/>
+<text xml:space="preserve" text-anchor="middle" x="411.62" y="-543.5" font-family="Arial" font-size="10.00">Yes</text>
+</g>
+<!-- topic_router&#45;&gt;reject -->
+<g id="edge5" class="edge">
+<title>topic_router-&gt;reject</title>
+<path fill="none" stroke="black" d="M437.33,-578.34C488.3,-564.75 585.06,-538.95 651.27,-521.3"/>
+<polygon fill="black" stroke="black" points="651.8,-524.78 660.56,-518.82 650,-518.01 651.8,-524.78"/>
+<text xml:space="preserve" text-anchor="middle" x="577.93" y="-543.5" font-family="Arial" font-size="10.00">No</text>
+</g>
+<!-- decision_router&#45;&gt;tweak -->
+<g id="edge9" class="edge">
+<title>decision_router-&gt;tweak</title>
+<path fill="none" stroke="black" d="M440.69,-275.61C397.82,-255.04 337.43,-226.08 294.51,-205.49"/>
+<polygon fill="black" stroke="black" points="296.16,-202.4 285.63,-201.23 293.13,-208.71 296.16,-202.4"/>
+<text xml:space="preserve" text-anchor="middle" x="398.48" y="-233.1" font-family="Arial" font-size="10.00">No docs</text>
+<text xml:space="preserve" text-anchor="middle" x="398.48" y="-221.1" font-family="Arial" font-size="10.00">(attempts &lt; 2)</text>
+</g>
+<!-- decision_router&#45;&gt;respond -->
+<g id="edge8" class="edge">
+<title>decision_router-&gt;respond</title>
+<path fill="none" stroke="black" d="M481.18,-263.26C475.93,-246.6 469.8,-227.21 464.8,-211.36"/>
+<polygon fill="black" stroke="black" points="468.19,-210.47 461.84,-201.98 461.52,-212.57 468.19,-210.47"/>
+<text xml:space="preserve" text-anchor="middle" x="514.02" y="-227.1" font-family="Arial" font-size="10.00">Has relevant docs</text>
+</g>
+<!-- decision_router&#45;&gt;fallback -->
+<g id="edge10" class="edge">
+<title>decision_router-&gt;fallback</title>
+<path fill="none" stroke="black" d="M528.84,-270.94C552.24,-251.51 582.55,-226.35 605.29,-207.46"/>
+<polygon fill="black" stroke="black" points="607.29,-210.35 612.74,-201.27 602.81,-204.97 607.29,-210.35"/>
+<text xml:space="preserve" text-anchor="middle" x="625" y="-233.1" font-family="Arial" font-size="10.00">No docs</text>
+<text xml:space="preserve" text-anchor="middle" x="625" y="-221.1" font-family="Arial" font-size="10.00">(attempts &gt;= 2)</text>
+</g>
+</g>
+</svg>

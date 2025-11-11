@@ -1,7 +1,5 @@
 # LangGraph-based Conversational RAG System
 
-## Complete Guide: From Beginner to Advanced
-
 ## Overview
 
 This guide teaches you how to build a sophisticated **Retrieval-Augmented Generation (RAG)** system using LangGraph. Unlike basic RAG implementations, this system handles:

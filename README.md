@@ -2,8 +2,6 @@
 
 ## Complete Guide: From Beginner to Advanced
 
----
-
 ## Overview
 
 This guide teaches you how to build a sophisticated **Retrieval-Augmented Generation (RAG)** system using LangGraph. Unlike basic RAG implementations, this system handles:
@@ -13,8 +11,6 @@ This guide teaches you how to build a sophisticated **Retrieval-Augmented Genera
 - ✅ Automatic evaluation and improvement of search results
 - ✅ Adaptive query optimization with retry logic
 - ✅ Complete dialogue memory management
-
----
 
 ## Table of Contents
 
@@ -28,8 +24,6 @@ This guide teaches you how to build a sophisticated **Retrieval-Augmented Genera
 8. [Test Scenarios](#test-scenarios)
 9. [Advanced Topics](#advanced-topics)
 10. [Troubleshooting](#troubleshooting)
-
----
 
 ## What is RAG?
 
@@ -62,11 +56,11 @@ This guide teaches you how to build a sophisticated **Retrieval-Augmented Genera
 
 **LLM**: Generates human-like responses using retrieved context
 
----
-
 ## System Architecture
 
 ### Flow Diagram
+
+![Architecture Diagram](graphviz-arch.svg)
 
 ```
 User Question
@@ -96,8 +90,6 @@ User Question
 | **Tweak Question** | Refine for better results | "owner age" → "age of owner" |
 | **Create Response** | Generate final answer | Use docs + LLM |
 
----
-
 ## Prerequisites
 
 ### Requirements
@@ -124,8 +116,6 @@ Create `.env` file:
 OPENAI_API_KEY="your-api-key-here"
 ```
 
----
-
 ## Project Setup
 
 ### Quick Start
@@ -149,8 +139,6 @@ echo 'OPENAI_API_KEY="your-key"' > .env
 # 6. Run
 uv run langgraph_rag_system.py
 ```
-
----
 
 ## Core Components
 
@@ -202,8 +190,6 @@ llm = ChatOpenAI(
     temperature=0  # Deterministic responses
 )
 ```
-
----
 
 ## 💻 Implementation Details
 
@@ -299,8 +285,6 @@ workflow.set_entry_point("rephrase_query")
 graph = workflow.compile(checkpointer=checkpointer)
 ```
 
----
-
 ## ▶️ Running the System
 
 ### Basic Usage
@@ -325,8 +309,6 @@ print(result["turns"][-1].content)
 system.process_question("What are the prices?", thread_id=1)
 system.process_question("Any cheaper options?", thread_id=1)  # Uses context
 ```
-
----
 
 ## Test Scenarios
 
@@ -362,8 +344,6 @@ Process:
 2. Retrieves and validates documents
 3. Returns: "Bella Vista is open on Sundays from 11:00 AM to 11:00 PM" ✅
 ```
-
----
 
 ## Advanced Topics
 
@@ -412,8 +392,6 @@ checkpointer = SqliteSaver.from_conn_string("conversations.db")
 graph = workflow.compile(checkpointer=checkpointer)
 ```
 
----
-
 ## Troubleshooting
 
 ### Common Issues
@@ -441,8 +419,6 @@ Solution: Check platform.openai.com/usage, add credits, or wait
 Solution: Reduce k parameter, cache embeddings, use faster models
 ```
 
----
-
 ## Best Practices
 
 ### Document Preparation
@@ -466,8 +442,6 @@ except Exception as e:
     return {"error": str(e)}
 ```
 
----
-
 ## Future Enhancements
 
 - **Multi-Source RAG**: Combine multiple knowledge bases
@@ -476,15 +450,11 @@ except Exception as e:
 - **Production Features**: Rate limiting, auth, analytics
 - **Enhanced Evaluation**: Confidence scores, citations
 
----
-
 ## Resources
 
 - **LangChain Docs**: [python.langchain.com](https://python.langchain.com)
 - **LangGraph Guide**: [langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/)
 - **OpenAI Docs**: [platform.openai.com/docs](https://platform.openai.com/docs)
-
----
 
 ## Summary
 
@@ -503,8 +473,6 @@ You've built a production-ready conversational RAG system with:
 3. State management maintains conversation context
 4. Evaluation prevents poor quality responses
 5. Structured outputs ensure reliability
-
----
 
 **Questions? Issues? Improvements?**  
 Experiment with your own documents and customize for your domain!
